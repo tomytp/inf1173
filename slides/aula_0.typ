@@ -1,69 +1,92 @@
 #import "@preview/typslides:1.2.4": *
 
-// Project configuration
 #show: typslides.with(
     ratio: "16-9",
     theme: "bluey",
 )
 
-// The front slide is the first slide of your presentation
 #front-slide(
-    title: "This is a sample presentation",
-    subtitle: [Using _typslides_],
-    authors: "Antonio Manjavacas",
-    info: [#link("https://github.com/manjavacas/typslides")],
+    title: "INF1173 - Aula 0",
+    subtitle: ["Introdução ao programação competitiva"],
+    authors: "Miguel Batista e Thomaz Miranda",
+    info: [#link("https://github.com/tomytp/inf1173")],
 )
 
-// Custom outline
-#table-of-contents()
+//#table-of-contents()
 
-// Title slides create new sections
 #title-slide[
-    This is a _Title slide_
+    O que é _programação competitiva_?
 ]
 
-// A simple slide
+#title-slide[
+    C++ 101
+]
+
+#title-slide[
+    Complexidade de algoritmos.
+]
+
 #slide[
-    - This is a simple `slide` with no title.
-    - #stress("Bold and coloured") text by using `#stress(text)`.
-    - Sample link: #link("typst.app")
+    #align(center, text(size: 2em)[O que é isso e por que isso importa?])
 
-    #framed[This text has been written using `#framed(text)`. The background color of the box is customisable.]
+    *O que é a complexidade de algoritmos:*
+    - Uma medida do crescimento do tempo de execução conforme o tamanho da entrada.
+    - Representada pela notação Big-O: $O(1), O(log n), O(n), O(n^2), O(2^n)$, etc.
+   
+    *Por que analisar algoritmos?*
+    - Para resolver um problema, além de tem um algoritmo correto, é importante que ele seja rápido.	 
 
-    #framed(title: "Frame with title")[This text has been written using `#framed(title:"Frame with title")[text]`.]
+    *Exemplo rápido:*  
+    - Ordenar 1 milhão de números:
+      - Algoritmo ingênuo ($O(n^2)$): ~17 horas  
+      - Algoritmo eficiente ($O(n log n)$): ~1 segundo  
 ]
 
-// Focus slide
 #focus-slide[
-    This is an auto-resized _focus slide_.
+    Programa que resolve certo no tempo errado
+    #align(center, text(size: 2em, weight: "bold")[NÃO])
+    é solução.
 ]
 
-// Blank slide
-#blank-slide[
-    - This is a `#blank-slide`.
 
-    - Available #stress[themes]#footnote[Use them as *color* functions! e.g., `#reddy("your text")`]:
+#slide(
+    text(size: 1.3em)[
+        #align(center, [Um problema:])
+        Dado um array de números, encontre o subarray contíguo com a maior soma.
 
-    #framed(back-color: white)[
-        #bluey("bluey"), #reddy("reddy"), #greeny("greeny"), #yelly("yelly"), #purply("purply"), #dusky("dusky"), darky.
+        Exemplo:
+        #align(center, [[-2, 1, -3, 4, -1, 2, 1, -5, 4]])
+
+        Resposta: 
+        - Subarray: [4, -1, 2, 1]
+        - Soma: 6
     ]
+)
+
+#slide[
+    #align(center, text(size: 2em)[Solução 1: Força Bruta])
+
+    // adicionar código
+
+    #align(center, text(size: 1.5em)[Complexidade: $O(n^3)$])
 ]
 
-// Slide with title
-#slide(title: "This is the slide title")[
-    #grayed([This is a `#grayed` text. Useful for equations.])
-    #grayed($ P_t = alpha - 1 / (sqrt(x) + f(y)) $)
+#slide[
+    #align(center, text(size: 2em)[Solução 2: Prefix Sum])
 
-    Sample references: aaaa, typslides.
-    - Add your #stress[bibliography slide]!
+    // adicionar código
 
-        1. `#let bib = bibliography("you_bibliography_file.bib")`
-        2. `#bibliography-slide(bib)`
+    #align(center, text(size: 1.5em)[Complexidade: $O(n^2)$])   
+]
+
+#slide[
+    #align(center, text(size: 2em)[Solução 3: Two pointers])
+
+    // adicionar código  
+
+    #align(center, text(size: 1.5em)[Complexidade: $O(n)$])
 ]
 
 #focus-slide[
     Duvidas?
-]
-#slide(title: "Last slide")[
-    DUVIDAS    
 ]
