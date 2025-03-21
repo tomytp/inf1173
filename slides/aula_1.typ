@@ -12,7 +12,7 @@
 )
 
 #front-slide(
-    title: "INF1173 - Aula 0",
+    title: "INF1173 - Aula 1",
     subtitle: ["Complexidade de algoritmo e busca binária"],
     authors: "Miguel Batista, Thomaz Miranda e João Arthur Marques",
 )
@@ -30,7 +30,6 @@
 
     #import-code("src/1_easy_read.sh", lang: "bash")
 
-    Obs.: Isso só funciona no linux, caso você use windows, recomendamos usar wsl.
 ]
 
 #title-slide[
@@ -68,38 +67,36 @@
 ]
 
 #slide(title: "Uma regra de bolso")[
-    #table(
-        columns: (auto, auto),
-        inset: 6pt,
-        align: horizon,
-        [*$n$*], [*Worst AC Algorithm*],
-        [$lt.eq [10..11]$], [$O(n!), O(n^6)$],
-        [$lt.eq [17..19]$], [$O(2^n times n^2)$],
-        [$lt.eq [18..22]$], [$O(2^n times n)$],
-        [$lt.eq [24..26]$], [$O(2^n)$],
-        [$lt.eq 100$], [$O(n^4)$],
-        [$lt.eq 450$], [$O(n^3)$],
-        [$lt.eq 1.5K$], [$O(n^{2.5})$],
-        [$lt.eq 2.5K$], [$O(n^2 log n)$],
-        [$lt.eq 10K$], [$O(n^2)$],
-        [$lt.eq 200K$], [$O(n^{1.5})$],
-        [$lt.eq 4.5M$], [$O(n log n)$],
-        [$lt.eq 10M$], [$O(n log log n)$],
-        [$lt.eq 100M$], [$O(n), O(log n), O(1)$]
-    )
+    #align(center)[
+        #table(
+            columns: (auto, auto),
+            inset: 6pt,
+            align: horizon,
+            [*$n$*], [*Worst AC Algorithm*],
+            [$lt.eq [10..11]$], [$O(n!), O(n^6)$],
+            [$lt.eq [17..19]$], [$O(2^n times n^2)$],
+            [$lt.eq [18..22]$], [$O(2^n times n)$],
+            [$lt.eq [24..26]$], [$O(2^n)$],
+            [$lt.eq 100$], [$O(n^4)$],
+            [$lt.eq 450$], [$O(n^3)$],
+            [$lt.eq 1.5K$], [$O(n^{2.5})$],
+            [$lt.eq 2.5K$], [$O(n^2 log n)$],
+            [$lt.eq 10K$], [$O(n^2)$],
+            [$lt.eq 200K$], [$O(n^{1.5})$],
+            [$lt.eq 4.5M$], [$O(n log n)$],
+            [$lt.eq 10M$], [$O(n log log n)$],
+            [$lt.eq 100M$], [$O(n), O(log n), O(1)$]
+        )
+    ]
 ]
 
 #slide(title: "Erros comuns")[
     1. Copiar estruturas grandes.
-    2. Inserir/remover no meio do vetor.
-
+    2. Passar estruturas como parametro de função.
+    3. Inserir/remover no meio do vetor.
 ]
 
-#slide(title: "Erros comuns")[
-    Adicionar um exemplo de uma subissão com TLE na lista    
-]
-
-#slide(title: "Estruturas da STL library")[
+#slide(title: "Estruturas da STL")[
     #import-code("src/1_data_structures.cpp", lang: "cpp")
 ]
 
@@ -114,32 +111,55 @@
     Sorting and Searching.
 ]
 
-#slide()[
-    Problema clássico de buscar um valor no vetor ordenado
-
-    Explicar como fazer melhor que O(n) e pq asolução é O(logn) 
+#slide(title: "Dicionário")[
+    #text(size: 1.5em)[Como você busca uma palavra no dicionário?]	
 ]
 
-#slide()[
-    lower_bound e upper_bound
+#focus-slide[
+    Implementação.
 ]
 
-#slide()[
-    codigo do upper_bound e lower_bound
-    resaltar a importnacia do +- 1
+#slide(title: "E se não estiver ordenado?")[
+    Existe função builtin do cpp para ordenar vetor:
+
+    #import-code("src/1_sort.cpp", lang: "cpp")
+
+    A complexidade de ordenar um vetor é $O(n log n)$.
 ]
 
-#slide()[
-    Busca binária na resposta
-    Usar um exemplo pra demonstrar
+#slide(title: "lower_bound e upper_bound")[
+    #align(center)[
+
+        #text(size: 1.5em)[O que diz a documentação?]
+
+        https://en.cppreference.com/w/
+    ]
 ]
+
+#slide(title: "Em busca da resposta certa")[
+    #text(size: 1.5em)[Uma ideia bem legal.]
+
+    Em algum problemas você quer encontar um "valor resposta".
+
+    Será que podemos fazer busca binária nele?   
+]
+
+#slide[
+    #text(size: 1.5em)[https://codeforces.com/problemset/problem/760/B]
+]
+
 
 #focus-slide[
     Duvidas?
 ]
 
 #slide(title: "Fontes e onde estudar mais")[
-    video da sbc
+    video da sbc: https://www.youtube.com/watch?v=LIu0h3pMOu4&t=1992s
     
-    cses problemas e livros
+    CSES problemas: https://cses.fi/problemset/
+
+    Competitive Programmer's Handbook: https://cses.fi/book/book.pdf
+
+    CP-algorithms. :https://cp-algorithms.com/num_methods/binary_search.html
+
 ]
