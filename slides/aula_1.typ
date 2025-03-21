@@ -97,7 +97,15 @@
 ]
 
 #slide(title: "Estruturas da STL")[
-    #import-code("src/1_data_structures.cpp", lang: "cpp")
+    #import-code("src/1__vector.cpp", lang: "cpp")
+]
+
+#slide(title: "Estruturas da STL")[
+    #import-code("src/1__set.cpp", lang: "cpp")
+]
+
+#slide(title: "Estruturas da STL")[
+    #import-code("src/1__map.cpp", lang: "cpp")
 ]
 
 #focus-slide[
